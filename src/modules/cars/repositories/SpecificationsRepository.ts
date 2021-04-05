@@ -9,20 +9,27 @@ import {
 class SpecificationsRepository implements ISpecificationsRepository {
     private specifications: Specification[];
 
-    constructor({ description, name }: ICreateSpecificationDTO): void {
+    constructor() {
+        this.specifications = [];
+    }
+
+    create({ name, description }: ICreateSpecificationDTO): void {
         const specification = new Specification();
 
         Object.assign(Specification, {
             name,
             description,
             created_at: new Date()
-        })
+        });
+
+        this.specifications.push(specification);
     }
-
-
-    create({ name, description }: ICreateSpecificationDTO): void {
-        throw new Error("Method not implemented");
+    findByName(name: string): Specification {
+        const specification = this.specifications.find(
+            (specification) => specification.name === name
+        );
+        return specification;
     }
 }
 
-export { SpecificationsRepository }
+export { SpecificationsRepository };
