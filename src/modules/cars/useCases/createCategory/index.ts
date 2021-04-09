@@ -11,4 +11,4 @@ const createCategoryController = new CreateCategoryController(
     createCategoryUseCase
 );
 
-export { CreateCategoryController }
+export { createCategoryController }
