@@ -4,3 +4,5 @@
 ## :link: Endpoints
 
 # :bust_in_silhouette: Author
+    
+    Davi dos Santos Costa
